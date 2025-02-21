@@ -1,0 +1,46 @@
+{
+  "name": "twc-uploads-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node build/server.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "cookie-session": "^2.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-domain-middleware": "^0.1.0",
+    "express-validator": "^6.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.12.0",
+    "nodemon": "^3.1.9",
+    "sequelize": "^6.37.5",
+    "tedious": "^18.6.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "uuid": "^11.1.0",
+    "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-session": "^2.0.49",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/express-domain-middleware": "^0.0.9",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  }
+}
