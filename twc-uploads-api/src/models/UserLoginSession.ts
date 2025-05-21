@@ -12,6 +12,7 @@ export class UserLoginSession extends Model {
     isActive!: boolean;
     loggedOutAt!: Date;
     createdAt!: Date;
+    expiresAt!: Date;
 }
 
 UserLoginSession.init(
@@ -45,7 +46,13 @@ UserLoginSession.init(
         },
         loggedOutAt: {
             type: DataTypes.DATE,
-        }
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+        },
+        expiresAt: {
+            type: DataTypes.DATE,
+        },
     },
     {
         sequelize,

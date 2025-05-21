@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import Session from "../models/UserLoginSession";
+import { UserLoginSession } from "../models/UserLoginSession";
 
 export const authenticate = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -8,7 +8,7 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
         if (!token) return res.status(401).json({ error: "Access denied, no token provided" });
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as { id: number };
-        const session = await Session.findOne({ where: { userId: decoded.id, token } });
+        const session = await UserLoginSession.findOne({ where: { userId: decoded.id, token } });
 
         if (!session || new Date() > new Date(session.expiresAt)) {
             return res.status(401).json({ error: "Session expired, please login again" });
